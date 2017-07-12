@@ -27,10 +27,10 @@
 
   <ItemGroup>
     <PackageReference Include="microsoft.extensions.logging.abstractions" Version="1.1.2" />
+    <PackageReference Include="Net.Chdk.Meta.Model.Base" Version="0.1.0-alpha" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Net.Chdk.Meta.Model.Platform\src\Net.Chdk.Meta.Model.Platform\Net.Chdk.Meta.Model.Platform.csproj" />
     <ProjectReference Include="..\..\..\Net.Chdk.Meta.Providers.Camera.Core\src\Net.Chdk.Meta.Providers.Camera.Core\Net.Chdk.Meta.Providers.Camera.Core.csproj" />
   </ItemGroup>
 
