@@ -3,7 +3,7 @@ using Net.Chdk.Meta.Model.CameraTree;
 
 namespace Net.Chdk.Meta.Providers.Camera
 {
-    public abstract class CardProvider<TCard>
+    public abstract class CameraCardProvider<TCard>
         where TCard : CardData, new()
     {
         public virtual TCard GetCard(uint modelId, TreeCardData card)
