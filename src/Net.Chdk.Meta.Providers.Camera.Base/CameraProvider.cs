@@ -10,10 +10,10 @@ namespace Net.Chdk.Meta.Providers.Camera
         where TCard : CardData
     {
         private IEncodingProvider EncodingProvider { get; }
-        private IBootProvider BootProvider { get; }
-        private ICardProvider<TCard> CardProvider { get; }
+        private ICameraBootProvider BootProvider { get; }
+        private ICameraCardProvider<TCard> CardProvider { get; }
 
-        protected CameraProvider(IEncodingProvider encodingProvider, IBootProvider bootProvider, ICardProvider<TCard> cardProvider)
+        protected CameraProvider(IEncodingProvider encodingProvider, ICameraBootProvider bootProvider, ICameraCardProvider<TCard> cardProvider)
         {
             EncodingProvider = encodingProvider;
             BootProvider = bootProvider;
