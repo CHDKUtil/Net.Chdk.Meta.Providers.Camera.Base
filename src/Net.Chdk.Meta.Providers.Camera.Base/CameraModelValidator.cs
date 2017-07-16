@@ -33,7 +33,7 @@ namespace Net.Chdk.Meta.Providers
 
         private void Validate(KeyValuePair<string, ListRevisionData> kvp, string platform, TreePlatformData tree)
         {
-            var revision = kvp.Value.Source.Revision ?? kvp.Key;
+            var revision = kvp.Value.Source?.Revision ?? kvp.Key;
             if (!tree.Revisions.ContainsKey(revision))
                 OnTreeRevisionMissing(platform, kvp.Key);
         }
