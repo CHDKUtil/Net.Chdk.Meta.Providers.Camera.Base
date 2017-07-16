@@ -6,14 +6,16 @@ using System.Collections.Generic;
 
 namespace Net.Chdk.Meta.Providers.Camera
 {
-    public abstract class CameraValidator : ICameraValidator
+    public abstract class ProductCameraValidator : IProductCameraValidator
     {
         protected ILogger Logger { get; }
 
-        protected CameraValidator(ILogger logger)
+        protected ProductCameraValidator(ILogger logger)
         {
             Logger = logger;
         }
+
+        public abstract string ProductName { get; }
 
         public void Validate(IDictionary<string, ListPlatformData> list, IDictionary<string, TreePlatformData> tree)
         {

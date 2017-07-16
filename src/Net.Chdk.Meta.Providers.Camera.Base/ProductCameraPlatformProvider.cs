@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace Net.Chdk.Meta.Providers.Camera
 {
-    public abstract class CameraPlatformProvider : ICameraPlatformProvider
+    public abstract class ProductCameraPlatformProvider : IProductCameraPlatformProvider
     {
         public PlatformData GetPlatform(string key, IDictionary<string, PlatformData> platforms)
         {
@@ -23,7 +23,13 @@ namespace Net.Chdk.Meta.Providers.Camera
             return value;
         }
 
-        protected abstract T TryGetValue<T>(IDictionary<string, T> values, string key)
-            where T : class;
+        public abstract string ProductName { get; }
+
+        protected virtual T TryGetValue<T>(IDictionary<string, T> values, string key)
+            where T : class
+        {
+            values.TryGetValue(key, out T value);
+            return value;
+        }
     }
 }

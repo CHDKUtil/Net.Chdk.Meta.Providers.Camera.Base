@@ -2,7 +2,7 @@
 
 namespace Net.Chdk.Meta.Providers.Camera
 {
-    public abstract class CameraBootProvider : ICameraBootProvider
+    public abstract class ProductCameraBootProvider : IProductCameraBootProvider
     {
         public BootData GetBoot(uint modelId)
         {
@@ -11,6 +11,8 @@ namespace Net.Chdk.Meta.Providers.Camera
                 Fs = GetBootFileSystem(modelId),
             };
         }
+
+        public abstract string ProductName { get; }
 
         protected abstract string GetBootFileSystem(uint modelId);
     }

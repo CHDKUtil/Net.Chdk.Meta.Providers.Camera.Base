@@ -3,7 +3,7 @@ using System;
 
 namespace Net.Chdk.Meta.Providers.Camera
 {
-    public abstract class EncodingProvider : IEncodingProvider
+    public abstract class CategoryEncodingProvider : ICategoryEncodingProvider
     {
         #region Fields
 
@@ -16,19 +16,21 @@ namespace Net.Chdk.Meta.Providers.Camera
 
         #region Constructor
 
-        protected EncodingProvider()
+        protected CategoryEncodingProvider()
         {
             _encodings = new Lazy<EncodingData[]>(GetEncodings);
         }
 
         #endregion
 
-        #region IEncodingProvider Members
+        #region ICategoryEncodingProvider Members
 
         public EncodingData GetEncoding(uint version)
         {
             return Encodings[version];
         }
+
+        public abstract string CategoryName { get; }
 
         #endregion
 

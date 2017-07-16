@@ -4,16 +4,18 @@ using Net.Chdk.Meta.Model.CameraTree;
 using System;
 using System.Collections.Generic;
 
-namespace Net.Chdk.Meta.Providers
+namespace Net.Chdk.Meta.Providers.Camera
 {
-    public abstract class CameraModelValidator : ICameraModelValidator
+    public abstract class ProductCameraModelValidator : IProductCameraModelValidator
     {
         protected ILogger Logger { get; }
 
-        protected CameraModelValidator(ILogger logger)
+        protected ProductCameraModelValidator(ILogger logger)
         {
             Logger = logger;
         }
+
+        public abstract string ProductName { get; }
 
         public void Validate(string platform, ListPlatformData list, TreePlatformData tree)
         {

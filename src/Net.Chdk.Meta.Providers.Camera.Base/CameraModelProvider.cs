@@ -14,9 +14,9 @@ namespace Net.Chdk.Meta.Providers.Camera
             ModelValidator = modelValidator;
         }
 
-        public virtual TModel GetModel(string platform, string[] names, ListPlatformData list, TreePlatformData tree)
+        public virtual TModel GetModel(string platform, string[] names, ListPlatformData list, TreePlatformData tree, string productName)
         {
-            ModelValidator.Validate(platform, list, tree);
+            ModelValidator.Validate(platform, list, tree, productName);
             return new TModel
             {
                 Platform = platform,
