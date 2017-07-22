@@ -5,15 +5,6 @@ namespace Net.Chdk.Meta.Providers.Camera
 {
     public abstract class CategoryEncodingProvider : ICategoryEncodingProvider
     {
-        #region Fields
-
-        protected static readonly EncodingData EmptyEncoding = new EncodingData
-        {
-            Name = string.Empty
-        };
-
-        #endregion
-
         #region Constructor
 
         protected CategoryEncodingProvider()
