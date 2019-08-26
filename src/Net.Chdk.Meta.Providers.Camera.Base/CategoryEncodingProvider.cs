@@ -16,8 +16,10 @@ namespace Net.Chdk.Meta.Providers.Camera
 
         #region ICategoryEncodingProvider Members
 
-        public EncodingData GetEncoding(uint version)
+        public EncodingData GetEncoding(string platform, uint version)
         {
+            if (Encodings.Length <= version)
+               throw new InvalidOperationException($"{platform}: Encoding {version} out of range");
             return Encodings[version];
         }
 

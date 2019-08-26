@@ -29,16 +29,16 @@ namespace Net.Chdk.Meta.Providers.Camera
             return new TCamera
             {
                 Models = new TModel[0],
-                Encoding = GetEncoding(tree.Encoding, categoryName),
+                Encoding = GetEncoding(platform, tree.Encoding, categoryName),
                 Boot = GetBoot(modelId, productName),
                 Card = GetCard(modelId, tree.Card, productName),
             };
         }
 
-        private EncodingData GetEncoding(TreeEncodingData encoding, string categoryName)
+        private EncodingData GetEncoding(string platform, TreeEncodingData encoding, string categoryName)
         {
             return encoding != null
-                ? EncodingProvider.GetEncoding(encoding.Version, categoryName)
+                ? EncodingProvider.GetEncoding(platform, encoding.Version, categoryName)
                 : null;
         }
 
