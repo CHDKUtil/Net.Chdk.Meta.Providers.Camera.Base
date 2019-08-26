@@ -7,7 +7,7 @@
   </PropertyGroup>
 
   <PropertyGroup>
-    <Version>0.3.0</Version>
+    <Version>0.4.0</Version>
     <Product>CHIMP</Product>
     <Authors>Dmitry Shechtman</Authors>
     <Copyright>Copyright © 2017 Dmitry Shechtman</Copyright>
@@ -17,8 +17,8 @@
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <Title>Net.Chdk.Meta.Providers.Camera.Base</Title>
     <PackageVersion>$(Version)-alpha</PackageVersion>
+    <PackageLicenseExpression>GPL-2.0-or-later</PackageLicenseExpression>
     <PackageIconUrl>https://raw.githubusercontent.com/CHDKUtil/CHIMP/master/tiny.png</PackageIconUrl>
-    <PackageLicenseUrl>https://raw.githubusercontent.com/CHDKUtil/Net.Chdk.Meta.Providers.Camera.Base/master/LICENSE</PackageLicenseUrl>
     <PackageProjectUrl>https://github.com/CHDKUtil/Net.Chdk.Meta.Providers.Camera.Base</PackageProjectUrl>
     <RepositoryUrl>https://github.com/CHDKUtil/Net.Chdk.Meta.Providers.Camera.Base</RepositoryUrl>
     <PackageTags>chimp meta provider camera base</PackageTags>
@@ -37,7 +37,7 @@
   <ItemGroup>
     <PackageReference Include="microsoft.extensions.logging.abstractions" Version="1.1.2" />
     <PackageReference Include="Net.Chdk.Meta.Providers.Camera.Core" Version="0.4.0-alpha" />
-    <PackageReference Include="Net.Chdk.Providers.Product.Core" Version="0.1.0-alpha" />
+    <PackageReference Include="Net.Chdk.Providers.Product.Core" Version="0.2.0-alpha" />
   </ItemGroup>
 
 </Project>
