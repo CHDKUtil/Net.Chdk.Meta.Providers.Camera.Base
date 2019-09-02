@@ -19,6 +19,12 @@ namespace Net.Chdk.Meta.Providers.Camera
 
         public void Validate(string platform, ListPlatformData list, TreePlatformData tree)
         {
+            if (list?.Revisions == null)
+                throw new InvalidOperationException($"{platform}: null list/revisions");
+
+            if (tree?.Revisions == null)
+                throw new InvalidOperationException($"{platform}: null tree/revisions");
+
             foreach (var kvp in tree.Revisions)
                 Validate(kvp, platform, list);
 
