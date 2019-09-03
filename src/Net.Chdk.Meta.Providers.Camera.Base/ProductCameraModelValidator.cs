@@ -43,7 +43,7 @@ namespace Net.Chdk.Meta.Providers.Camera
         {
             var revision = kvp.Value?.Source?.Revision ?? kvp.Key;
             if (!tree.Revisions.ContainsKey(revision))
-                OnTreeRevisionMissing(platform, kvp.Key);
+                OnTreeRevisionMissing(platform, revision);
         }
 
         protected virtual void OnListRevisionMissing(string platform, string revision)
